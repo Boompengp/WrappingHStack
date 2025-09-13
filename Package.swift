@@ -4,5 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "WrappingHStack"
+    name: "WrappingHStack",
+    platforms: [
+        .iOS(.v14)
+    ],
+    products: [
+        .library(
+            name: "WrappingHStack",
+            targets: ["WrappingHStack"]
+        ),
+    ],
+    targets: [
+        .target(
+            name: "WrappingHStack",
+            dependencies: []
+        ),
+        .testTarget(
+            name: "WrappingHStackTests",
+            dependencies: ["WrappingHStack"]
+        ),
+    ]
 )
