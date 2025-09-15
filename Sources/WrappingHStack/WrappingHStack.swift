@@ -208,6 +208,31 @@ public struct WrappingHStack: View {
 // MARK: - ViewBuilder Overloads
 
 extension WrappingHStack {
+
+    // MARK: - Parameter Packs (Swift 5.9+)
+    #if swift(>=5.9)
+    /// Creates a WrappingHStack using parameter packs (Swift 5.9+, iOS 17+)
+    /// Supports unlimited number of views without manual overloads
+    @available(iOS 17.0, macOS 14.0, *)
+    public init<each Content: View>(
+        spacing: CGFloat = 4,
+        lineSpacing: CGFloat = 4,
+        alignment: HorizontalAlignment = .center,
+        @ViewBuilder content: () -> TupleView<(repeat each Content)>
+    ) {
+        self.spacing = spacing
+        self.lineSpacing = lineSpacing
+        self.alignment = alignment
+        let tuple = content().value
+        var views: [AnyView] = []
+        for view in repeat each tuple {
+            views.append(AnyView(view))
+        }
+        self.content = views
+    }
+    #endif
+
+    // MARK: - Manual Overloads (iOS 14+ Fallback)
     @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View>(
         spacing: CGFloat = 4,

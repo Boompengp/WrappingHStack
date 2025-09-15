@@ -15,6 +15,7 @@ A flexible SwiftUI layout container that arranges views in horizontal lines, aut
 - ✅ **Smart Wrapping**: Automatically wraps content to new lines when space is limited
 - ✅ **Flexible Alignment**: Support for leading, center, and trailing alignment
 - ✅ **Customizable Spacing**: Independent control of horizontal and vertical spacing
+- ✅ **Unlimited Views**: Swift 5.9+ parameter packs for unlimited views, iOS 14+ fallback (up to 10 views)
 - ✅ **Type Safety**: Full generic support with proper type constraints
 - ✅ **Performance Optimized**: Efficient layout calculation with hidden measurement layer
 - ✅ **SwiftUI Native**: Built with SwiftUI best practices and conventions
@@ -110,9 +111,11 @@ WrappingHStack(tags, id: \.self, spacing: 8, lineSpacing: 8, alignment: .trailin
 }
 ```
 
-### 3. ViewBuilder Syntax (up to 10 views)
+### 3. ViewBuilder Syntax (Unlimited views on Swift 5.9+)
 
 For static layouts with mixed content types:
+- **Swift 5.9+ (iOS 17+)**: Unlimited views using parameter packs
+- **iOS 14+ Fallback**: Up to 10 views using manual overloads
 
 ```swift
 WrappingHStack(spacing: 12, lineSpacing: 12, alignment: .leading) {
@@ -225,8 +228,12 @@ A layout container that arranges its children in horizontal lines, wrapping to n
    where Data: RandomAccessCollection, Content: View
    ```
 
-3. **ViewBuilder Syntax (1-10 views)**
+3. **ViewBuilder Syntax (Unlimited views on Swift 5.9+)**
    ```swift
+   // Swift 5.9+ (iOS 17+): Parameter packs for unlimited views
+   init<each Content: View>(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: () -> TupleView<(repeat each Content)>)
+
+   // iOS 14+ Fallback: Manual overloads (up to 10 views)
    init(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: () -> some View)
    ```
 

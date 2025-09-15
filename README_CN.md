@@ -15,6 +15,7 @@
 - ✅ **智能换行**：当空间不足时自动将内容换行到新行
 - ✅ **灵活对齐**：支持 leading、center 和 trailing 对齐
 - ✅ **可定制间距**：独立控制水平和垂直间距
+- ✅ **无限制视图**：Swift 5.9+ 参数包支持无限视图，iOS 14+ 回退支持（最多 10 个视图）
 - ✅ **类型安全**：完整的泛型支持和正确的类型约束
 - ✅ **性能优化**：使用隐藏测量层进行高效布局计算
 - ✅ **SwiftUI 原生**：完全使用 SwiftUI 最佳实践构建
@@ -110,9 +111,11 @@ WrappingHStack(tags, id: \.self, spacing: 8, lineSpacing: 8, alignment: .trailin
 }
 ```
 
-### 3. ViewBuilder 语法（支持最多 10 个视图）
+### 3. ViewBuilder 语法（Swift 5.9+ 支持无限视图）
 
 适用于混合内容类型的静态布局：
+- **Swift 5.9+ (iOS 17+)**：使用参数包支持无限数量视图
+- **iOS 14+ 回退支持**：使用手动重载最多支持 10 个视图
 
 ```swift
 WrappingHStack(spacing: 12, lineSpacing: 12, alignment: .leading) {
@@ -225,8 +228,12 @@ struct ContentView: View {
    where Data: RandomAccessCollection, Content: View
    ```
 
-3. **ViewBuilder 语法（1-10 个视图）**
+3. **ViewBuilder 语法（Swift 5.9+ 支持无限视图）**
    ```swift
+   // Swift 5.9+ (iOS 17+)：参数包支持无限视图
+   init<each Content: View>(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: () -> TupleView<(repeat each Content)>)
+
+   // iOS 14+ 回退支持：手动重载（最多 10 个视图）
    init(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: () -> some View)
    ```
 
