@@ -11,7 +11,7 @@ struct NewAPIExamples: View {
         Item(name: "iMac", category: "Computer")
     ]
 
-    @State private var selectedAlignment: HorizontalAlignment = .leading
+    @State private var selectedAlignment: HorizontalAlignment = .center
 
     var body: some View {
         ScrollView {

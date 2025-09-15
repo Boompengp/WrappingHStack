@@ -151,7 +151,7 @@ WrappingHStack(tags, alignment: .trailing) { tag in ... }
 
 ```swift
 struct ContentView: View {
-    @State private var selectedAlignment: HorizontalAlignment = .leading
+    @State private var selectedAlignment: HorizontalAlignment = .center
     let tags = ["Swift", "SwiftUI", "iOS", "Xcode"]
 
     var body: some View {
@@ -185,7 +185,7 @@ A layout container that arranges its children in horizontal lines, wrapping to n
 
 - **spacing**: `CGFloat` - Horizontal spacing between items on the same line (default: 4)
 - **lineSpacing**: `CGFloat` - Vertical spacing between lines (default: 4)
-- **alignment**: `HorizontalAlignment` - Horizontal alignment of lines (default: .leading)
+- **alignment**: `HorizontalAlignment` - Horizontal alignment of lines (default: .center)
   - `.leading`: Left-aligned
   - `.center`: Center-aligned
   - `.trailing`: Right-aligned
@@ -194,19 +194,19 @@ A layout container that arranges its children in horizontal lines, wrapping to n
 
 1. **ForEach with Identifiable Data**
    ```swift
-   init<Data, Content>(_ data: Data, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .leading, @ViewBuilder content: @escaping (Data.Element) -> Content)
+   init<Data, Content>(_ data: Data, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: @escaping (Data.Element) -> Content)
    where Data: RandomAccessCollection, Data.Element: Identifiable, Content: View
    ```
 
 2. **Array with KeyPath ID**
    ```swift
-   init<Data, Content>(_ data: Data, id: KeyPath<Data.Element, some Hashable>, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .leading, @ViewBuilder content: @escaping (Data.Element) -> Content)
+   init<Data, Content>(_ data: Data, id: KeyPath<Data.Element, some Hashable>, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: @escaping (Data.Element) -> Content)
    where Data: RandomAccessCollection, Content: View
    ```
 
 3. **ViewBuilder Syntax (1-10 views)**
    ```swift
-   init(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .leading, @ViewBuilder content: () -> some View)
+   init(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: () -> some View)
    ```
 
 ## Performance Notes

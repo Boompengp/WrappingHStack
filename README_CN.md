@@ -151,7 +151,7 @@ WrappingHStack(tags, alignment: .trailing) { tag in ... }
 
 ```swift
 struct ContentView: View {
-    @State private var selectedAlignment: HorizontalAlignment = .leading
+    @State private var selectedAlignment: HorizontalAlignment = .center
     let tags = ["Swift", "SwiftUI", "iOS", "Xcode"]
 
     var body: some View {
@@ -185,7 +185,7 @@ struct ContentView: View {
 
 - **spacing**: `CGFloat` - 同一行项目之间的水平间距（默认：4）
 - **lineSpacing**: `CGFloat` - 行与行之间的垂直间距（默认：4）
-- **alignment**: `HorizontalAlignment` - 行的水平对齐方式（默认：.leading）
+- **alignment**: `HorizontalAlignment` - 行的水平对齐方式（默认：.center）
   - `.leading`：左对齐
   - `.center`：居中对齐
   - `.trailing`：右对齐
@@ -194,19 +194,19 @@ struct ContentView: View {
 
 1. **ForEach 配合 Identifiable 数据**
    ```swift
-   init<Data, Content>(_ data: Data, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .leading, @ViewBuilder content: @escaping (Data.Element) -> Content)
+   init<Data, Content>(_ data: Data, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: @escaping (Data.Element) -> Content)
    where Data: RandomAccessCollection, Data.Element: Identifiable, Content: View
    ```
 
 2. **数组配合 KeyPath ID**
    ```swift
-   init<Data, Content>(_ data: Data, id: KeyPath<Data.Element, some Hashable>, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .leading, @ViewBuilder content: @escaping (Data.Element) -> Content)
+   init<Data, Content>(_ data: Data, id: KeyPath<Data.Element, some Hashable>, spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: @escaping (Data.Element) -> Content)
    where Data: RandomAccessCollection, Content: View
    ```
 
 3. **ViewBuilder 语法（1-10 个视图）**
    ```swift
-   init(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .leading, @ViewBuilder content: () -> some View)
+   init(spacing: CGFloat = 4, lineSpacing: CGFloat = 4, alignment: HorizontalAlignment = .center, @ViewBuilder content: () -> some View)
    ```
 
 ## 性能说明
