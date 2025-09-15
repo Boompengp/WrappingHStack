@@ -353,8 +353,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Boompengp/WrappingHStack";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		939E0C802E77F61E00828D4F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
