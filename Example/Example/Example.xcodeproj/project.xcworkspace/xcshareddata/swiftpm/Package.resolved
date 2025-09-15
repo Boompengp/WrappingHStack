@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Boompengp/WrappingHStack",
       "state" : {
-        "revision" : "c300f2b760c09f02f9a39b584521dfc08b2a3ce3",
-        "version" : "1.0.0"
+        "branch" : "main",
+        "revision" : "e1fd4929f00cf74acedd11d8d44c01771496bee0"
       }
     }
   ],

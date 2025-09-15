@@ -475,11 +475,117 @@ struct ContentView: View {
                                 .cornerRadius(6)
                         }
                     }
+
+                    Divider()
+
+                    // iOS 17+ Unlimited Views Test (Parameter Packs)
+                    if #available(iOS 17.0, *) {
+                        VStack(alignment: .leading, spacing: 16) {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("iOS 17+ Unlimited Views Test")
+                                    .font(.headline)
+                                Text("Parameter packs enable unlimited views (15+ views shown below)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            WrappingHStack(spacing: 6, lineSpacing: 8, alignment: selectedAlignment) {
+                                // 15+ views to demonstrate unlimited capability
+                                Text("View 1").unlimitedViewStyle(color: .red)
+                                Text("View 2").unlimitedViewStyle(color: .orange)
+                                Text("View 3").unlimitedViewStyle(color: .yellow)
+                                Text("View 4").unlimitedViewStyle(color: .green)
+                                Text("View 5").unlimitedViewStyle(color: .blue)
+                                Text("View 6").unlimitedViewStyle(color: .purple)
+                                Text("View 7").unlimitedViewStyle(color: .pink)
+                                Text("View 8").unlimitedViewStyle(color: .red)
+                                Text("View 9").unlimitedViewStyle(color: .orange)
+                                Text("View 10").unlimitedViewStyle(color: .yellow)
+                                Text("View 11").unlimitedViewStyle(color: .green)
+                                Text("View 12").unlimitedViewStyle(color: .blue)
+                                Text("View 13").unlimitedViewStyle(color: .purple)
+                                Text("View 14").unlimitedViewStyle(color: .pink)
+                                Text("View 15").unlimitedViewStyle(color: .red)
+
+                                // Even more views to really show it's unlimited
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(.yellow)
+                                    .padding(8)
+                                    .background(Color.black.opacity(0.1))
+                                    .cornerRadius(8)
+
+                                Button("Button") { }
+                                    .font(.caption)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(6)
+
+                                HStack(spacing: 2) {
+                                    Image(systemName: "heart.fill")
+                                        .foregroundColor(.red)
+                                    Text("Like")
+                                        .font(.caption)
+                                }
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 4)
+                                .background(Color.red.opacity(0.1))
+                                .cornerRadius(8)
+
+                                Text("20+ Views!")
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(Color.green)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                        }
+                    } else {
+                        VStack(alignment: .leading, spacing: 16) {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("iOS 14-16: Limited to 10 Views")
+                                    .font(.headline)
+                                Text("Upgrade to iOS 17+ for unlimited views via parameter packs")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+
+                            WrappingHStack(spacing: 6, lineSpacing: 8, alignment: selectedAlignment) {
+                                Text("View 1").unlimitedViewStyle(color: .red)
+                                Text("View 2").unlimitedViewStyle(color: .orange)
+                                Text("View 3").unlimitedViewStyle(color: .yellow)
+                                Text("View 4").unlimitedViewStyle(color: .green)
+                                Text("View 5").unlimitedViewStyle(color: .blue)
+                                Text("View 6").unlimitedViewStyle(color: .purple)
+                                Text("View 7").unlimitedViewStyle(color: .pink)
+                                Text("View 8").unlimitedViewStyle(color: .red)
+                                Text("View 9").unlimitedViewStyle(color: .orange)
+                                Text("Max: 10").unlimitedViewStyle(color: .black)
+                            }
+                        }
+                    }
                 }
                 .padding()
             }
             .navigationTitle("WrappingHStack Demo")
         }
+    }
+}
+
+// MARK: - View Extensions
+
+extension Text {
+    func unlimitedViewStyle(color: Color) -> some View {
+        self
+            .font(.caption)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(color.opacity(0.2))
+            .foregroundColor(color)
+            .cornerRadius(6)
     }
 }
 
