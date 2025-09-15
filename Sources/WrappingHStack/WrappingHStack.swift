@@ -2,7 +2,6 @@ import SwiftUI
 
 /// A layout container that arranges its children in horizontal lines, wrapping to new lines as needed.
 /// Similar to HStack but automatically wraps content to new lines when space is limited.
-@available(iOS 14.0, macOS 11.0, *)
 public struct WrappingHStack: View {
     private let spacing: CGFloat
     private let lineSpacing: CGFloat
@@ -22,7 +21,6 @@ public struct WrappingHStack: View {
     ///   - lineSpacing: Vertical spacing between lines
     ///   - alignment: Horizontal alignment of lines (.leading, .center, .trailing)
     ///   - content: A view builder that creates a view for each data element
-    @available(iOS 14.0, macOS 11.0, *)
     public init<Data: RandomAccessCollection, Content: View>(
         _ data: Data,
         spacing: CGFloat = 4,
@@ -44,10 +42,9 @@ public struct WrappingHStack: View {
     ///   - lineSpacing: Vertical spacing between lines
     ///   - alignment: Horizontal alignment of lines (.leading, .center, .trailing)
     ///   - content: A view builder that creates a view for each data element
-    @available(iOS 14.0, macOS 11.0, *)
-    public init<Data: RandomAccessCollection, Content: View>(
+    public init<Data: RandomAccessCollection, ID: Hashable, Content: View>(
         _ data: Data,
-        id: KeyPath<Data.Element, some Hashable>,
+        id: KeyPath<Data.Element, ID>,
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
         alignment: HorizontalAlignment = .center,
@@ -61,26 +58,7 @@ public struct WrappingHStack: View {
 
     // MARK: - ViewBuilder Initializers
 
-    /// Creates a WrappingHStack using ViewBuilder syntax (supports up to 10 views)
-    /// - Parameters:
-    ///   - spacing: Horizontal spacing between items on the same line
-    ///   - lineSpacing: Vertical spacing between lines
-    ///   - alignment: Horizontal alignment of lines (.leading, .center, .trailing)
-    ///   - content: A view builder that creates the content views
-    @available(iOS 14.0, macOS 11.0, *)
-    public init(
-        spacing: CGFloat = 4,
-        lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
-        @ViewBuilder content: () -> some View
-    ) {
-        self.spacing = spacing
-        self.lineSpacing = lineSpacing
-        self.alignment = alignment
-        self.content = [AnyView(content())]
-    }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
@@ -233,7 +211,6 @@ extension WrappingHStack {
     #endif
 
     // MARK: - Manual Overloads (iOS 14+ Fallback)
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -247,7 +224,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -261,7 +237,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1), AnyView(tuple.2)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View, V3: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -275,7 +250,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1), AnyView(tuple.2), AnyView(tuple.3)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View, V3: View, V4: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -289,7 +263,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1), AnyView(tuple.2), AnyView(tuple.3), AnyView(tuple.4)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -303,7 +276,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1), AnyView(tuple.2), AnyView(tuple.3), AnyView(tuple.4), AnyView(tuple.5)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -317,7 +289,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1), AnyView(tuple.2), AnyView(tuple.3), AnyView(tuple.4), AnyView(tuple.5), AnyView(tuple.6)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View, V7: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -331,7 +302,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1), AnyView(tuple.2), AnyView(tuple.3), AnyView(tuple.4), AnyView(tuple.5), AnyView(tuple.6), AnyView(tuple.7)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View, V7: View, V8: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
@@ -345,7 +315,6 @@ extension WrappingHStack {
         self.content = [AnyView(tuple.0), AnyView(tuple.1), AnyView(tuple.2), AnyView(tuple.3), AnyView(tuple.4), AnyView(tuple.5), AnyView(tuple.6), AnyView(tuple.7), AnyView(tuple.8)]
     }
 
-    @available(iOS 14.0, macOS 11.0, *)
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View, V7: View, V8: View, V9: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
