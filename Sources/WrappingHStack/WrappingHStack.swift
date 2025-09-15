@@ -25,7 +25,7 @@ public struct WrappingHStack: View {
         _ data: Data,
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: @escaping (Data.Element) -> Content
     ) where Data.Element: Identifiable {
         self.spacing = spacing
@@ -47,7 +47,7 @@ public struct WrappingHStack: View {
         id: KeyPath<Data.Element, ID>,
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: @escaping (Data.Element) -> Content
     ) {
         self.spacing = spacing
@@ -195,7 +195,7 @@ extension WrappingHStack {
     public init<each Content: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(repeat each Content)>
     ) {
         self.spacing = spacing
@@ -214,7 +214,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1)>
     ) {
         self.spacing = spacing
@@ -227,7 +227,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2)>
     ) {
         self.spacing = spacing
@@ -240,7 +240,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View, V3: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2, V3)>
     ) {
         self.spacing = spacing
@@ -253,7 +253,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View, V3: View, V4: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2, V3, V4)>
     ) {
         self.spacing = spacing
@@ -266,7 +266,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2, V3, V4, V5)>
     ) {
         self.spacing = spacing
@@ -279,7 +279,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2, V3, V4, V5, V6)>
     ) {
         self.spacing = spacing
@@ -292,7 +292,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View, V7: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2, V3, V4, V5, V6, V7)>
     ) {
         self.spacing = spacing
@@ -305,7 +305,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View, V7: View, V8: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2, V3, V4, V5, V6, V7, V8)>
     ) {
         self.spacing = spacing
@@ -318,7 +318,7 @@ extension WrappingHStack {
     public init<V0: View, V1: View, V2: View, V3: View, V4: View, V5: View, V6: View, V7: View, V8: View, V9: View>(
         spacing: CGFloat = 4,
         lineSpacing: CGFloat = 4,
-        alignment: HorizontalAlignment = .center,
+        alignment: HorizontalAlignment = .leading,
         @ViewBuilder content: () -> TupleView<(V0, V1, V2, V3, V4, V5, V6, V7, V8, V9)>
     ) {
         self.spacing = spacing

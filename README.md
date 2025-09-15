@@ -209,7 +209,7 @@ A layout container that arranges its children in horizontal lines, wrapping to n
 
 - **spacing**: `CGFloat` - Horizontal spacing between items on the same line (default: 4)
 - **lineSpacing**: `CGFloat` - Vertical spacing between lines (default: 4)
-- **alignment**: `HorizontalAlignment` - Horizontal alignment of lines (default: .center)
+- **alignment**: `HorizontalAlignment` - Horizontal alignment of lines (default: .leading)
   - `.leading`: Left-aligned
   - `.center`: Center-aligned
   - `.trailing`: Right-aligned

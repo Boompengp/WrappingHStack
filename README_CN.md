@@ -209,7 +209,7 @@ struct ContentView: View {
 
 - **spacing**: `CGFloat` - 同一行项目之间的水平间距（默认：4）
 - **lineSpacing**: `CGFloat` - 行与行之间的垂直间距（默认：4）
-- **alignment**: `HorizontalAlignment` - 行的水平对齐方式（默认：.center）
+- **alignment**: `HorizontalAlignment` - 行的水平对齐方式（默认：.leading）
   - `.leading`：左对齐
   - `.center`：居中对齐
   - `.trailing`：右对齐
