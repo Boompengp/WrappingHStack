@@ -37,6 +37,27 @@ dependencies: [
 ]
 ```
 
+### Running the Example App
+
+To run the comprehensive demo application:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Boompengp/WrappingHStack.git
+   cd WrappingHStack
+   ```
+
+2. **Open the Example project**
+   ```bash
+   open Example/Example/Example.xcodeproj
+   ```
+
+3. **Add required dependencies in Xcode:**
+   - Add local WrappingHStack package (point to `../..`)
+   - Add [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) for iOS 14+ image loading
+
+4. **Build and run** to see all demo scenarios in action!
+
 ## Usage
 
 ### 1. ForEach with Identifiable Data
@@ -224,12 +245,27 @@ A layout container that arranges its children in horizontal lines, wrapping to n
 
 ## Examples
 
-Check out `NewAPIExamples.swift` for comprehensive usage examples including:
+### Live Demo App
 
-- Multiple initialization patterns
-- Dynamic alignment switching
-- Mixed content types
-- Real-world UI scenarios
+Check out the complete **Example App** in the `Example/` directory featuring:
+
+- 📱 **Interactive Alignment Control** - Switch between leading, center, and trailing in real-time
+- 📝 **Static Text Testing** - Multiple languages and text lengths
+- 🖼️ **Dynamic Image Resizing** - Adjustable image sizes with slider (30-100pt)
+- 🎨 **Image-Text Mixing Scenarios**:
+  - **Social Media Style** - Avatars, text bubbles, and hashtags
+  - **Product Tags Style** - Features, images, ratings, and prices
+  - **News Feed Style** - Complete social media post layouts
+- 🔄 **Real-time Layout Updates** - All examples respond to alignment and size changes
+
+### Code Examples
+
+The Example app demonstrates all three API patterns:
+
+- **Collection-based initialization** with dynamic data
+- **ViewBuilder syntax** for static layouts
+- **Mixed content layouts** combining images and text
+- **iOS 14+ compatibility** using WebImage for network images
 
 ## Contributing
 
@@ -242,6 +278,11 @@ MIT License
 ## Author
 
 Created by [@Boompengp](https://github.com/Boompengp)
+
+## Acknowledgments
+
+- Thanks to [@dkk](https://github.com/dkk) for design inspiration, project architecture references his [WrappingHStack](https://github.com/dkk/WrappingHStack)
+- Thanks to [Claude](https://claude.ai/code) for code assistance, most of the code was developed with AI collaboration
 
 ---
 

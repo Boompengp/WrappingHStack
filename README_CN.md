@@ -37,6 +37,27 @@ dependencies: [
 ]
 ```
 
+### 运行示例应用
+
+要运行完整的演示应用：
+
+1. **克隆仓库**
+   ```bash
+   git clone https://github.com/Boompengp/WrappingHStack.git
+   cd WrappingHStack
+   ```
+
+2. **打开示例项目**
+   ```bash
+   open Example/Example/Example.xcodeproj
+   ```
+
+3. **在 Xcode 中添加必要的依赖：**
+   - 添加本地 WrappingHStack 包（指向 `../..`）
+   - 添加 [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI) 用于 iOS 14+ 图片加载
+
+4. **构建并运行**，查看所有演示场景！
+
 ## 使用方法
 
 ### 1. ForEach 配合 Identifiable 数据
@@ -224,24 +245,37 @@ struct ContentView: View {
 
 ## 示例
 
-查看 `NewAPIExamples.swift` 获取完整的使用示例，包括：
+### 实时演示应用
 
-- 多种初始化模式
-- 动态对齐切换
-- 混合内容类型
-- 真实世界的 UI 场景
+查看 `Example/` 目录中的完整**示例应用**，功能包括：
 
-## 贡献
+- 📱 **交互式对齐控制** - 实时切换左对齐、居中、右对齐
+- 📝 **静态文字测试** - 多语言和不同长度的文本
+- 🖼️ **动态图片调整** - 滑块调节图片大小 (30-100pt)
+- 🎨 **图文混排场景**：
+  - **社交媒体风格** - 头像、文字气泡和话题标签
+  - **产品标签风格** - 功能、图片、评分和价格
+  - **新闻动态风格** - 完整的社交媒体帖子布局
+- 🔄 **实时布局更新** - 所有示例都响应对齐和尺寸变化
 
-欢迎贡献！请随时提交 Pull Request。
+### 代码示例
+
+示例应用演示了所有三种 API 模式：
+
+- **基于集合的初始化** 配合动态数据
+- **ViewBuilder 语法** 用于静态布局
+- **混合内容布局** 结合图片和文字
+- **iOS 14+ 兼容性** 使用 WebImage 加载网络图片
+
 
 ## 许可证
 
 MIT 许可证
 
-## 作者
+## 致谢
 
-由 [@Boompengp](https://github.com/Boompengp) 创建
+- 感谢 [@dkk](https://github.com/dkk) 提供设计思路，项目架构参考了他的 [WrappingHStack](https://github.com/dkk/WrappingHStack)
+- 感谢 [Claude](https://claude.ai/code) 提供代码协助，绝大部分代码都是通过 AI 协助完成
 
 ---
 
