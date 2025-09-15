@@ -1,5 +1,5 @@
 {
-  "originHash" : "56cc465ec138285ce0f3fb025e95717d53f137e9074fff428fa19b998b586fbc",
+  "originHash" : "624b00516a70360f0140c93a6d897118d4329a0bfb27e5b13d17261093e967bb",
   "pins" : [
     {
       "identity" : "sdwebimage",
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Boompengp/WrappingHStack",
       "state" : {
-        "branch" : "main",
-        "revision" : "d35c0dc018e328d2cca31329e2e2e917ecf45137"
+        "revision" : "c300f2b760c09f02f9a39b584521dfc08b2a3ce3",
+        "version" : "1.0.0"
       }
     }
   ],
