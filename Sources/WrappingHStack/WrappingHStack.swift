@@ -56,9 +56,6 @@ public struct WrappingHStack: View {
         self.content = data.map { AnyView(content($0)) }
     }
 
-    // MARK: - ViewBuilder Initializers
-
-
     public var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topLeading) {
